@@ -8,498 +8,460 @@
     <title>体現帝国館</title>
 </head>
 
-<body class="w-screen relative inline-flex flex-col justify-start items-center font-zen-old-mincho font-medium">
+<body
+    class="w-screen relative inline-flex flex-col justify-start items-center font-zen-old-mincho font-medium text-gray-950">
 
-    <header
-        class="w-full h-28 px-14 left-0 top-[1024px] absolute bg-gray-100 inline-flex justify-between items-center overflow-hidden">
-        <img class="w-48 h-16" src="https://placehold.co/188x70" />
-        <div class="py-7 flex justify-center items-center gap-7 overflow-hidden">
-            <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                観に行く</div>
-            <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                借りる</div>
-            <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                上演／展示する</div>
-            <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                体現帝国館とは</div>
-            <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                各種資料</div>
-        </div>
+    <video autoplay muted loop src="./image/background6.mp4"
+        class="fixed z-[-99] w-full h-full inset-0 object-cover"></video>
+
+    <header class="w-full h-28 md:px-14 px-4 inset-0 fixed z-50 flex justify-between items-center">
+        <h1>
+            <a href="./index.html"><img class="w-48 h-auto" src="./image/taigenteikokukan_logo.png" alt="体現帝国館" /></a>
+        </h1>
+
+        <nav class="hidden md:block">
+            <ul class="py-7 flex items-center gap-4 tracking-widest">
+                <a href="#watch">
+                    <li class="leading-8">観に行く</li>
+                </a>
+                <a href="#rent">
+                    <li class="leading-8">借りる</li>
+                </a>
+                <a href="#use">
+                    <li class="leading-8">上演／展示する</li>
+                </a>
+                <a href="#about">
+                    <li class="leading-8">体現帝国館とは</li>
+                </a>
+                <a href="#document">
+                    <li class="leading-8">各種資料</li>
+                </a>
+            </ul>
+        </nav>
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5">
+            <span class="w-8 h-0.5 bg-gray-950"></span>
+            <span class="w-8 h-0.5 bg-gray-950"></span>
+            <span class="w-8 h-0.5 bg-gray-950"></span>
+        </button>
     </header>
 
-    <section class="w-full h-screen relative bg-gray-100">
-        <img class="w-[1820px] h-[1024px] left-0 top-0 absolute" src="https://placehold.co/1820x1024" />
-        <div data-header="disapper"
-            class="w-screen h-28 px-14 left-0 top-0 absolute inline-flex justify-between items-center overflow-hidden">
-            <div class="w-52 h-20"></div>
-            <div class="justify-start text-gray-100 text-lg font-normal font-['Inter']">MENU</div>
+    <div id="mobileMenu"
+        class="md:hidden hidden flex flex-col items-start gap-6 w-full bg-white/90 px-10 py-8 tracking-widest text-lg fixed top-28 left-0 z-40">
+        <a href="#watch" class="leading-8">観に行く</a>
+        <a href="#rent" class="leading-8">借りる</a>
+        <a href="#use" class="leading-8">上演／展示する</a>
+        <a href="#about" class="leading-8">体現帝国館とは</a>
+        <a href="#document" class="leading-8">各種資料</a>
+    </div>
+
+    <section class="w-full h-screen relative">
+        <img class="w-full h-full inset-0 absolute object-cover" src="image/top1.jpg" />
+        <img class="w-[538px] h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute"
+            src="./image/taigenteikokukan_logo.png" alt="体現帝国館" />
+        <img src="./image/introduction.svg" alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"
+            class="hidden md:inline w-[695px] top-3/4 h-auto left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-center">
+        <img src="./image/intro.svg" alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"
+            class="md:hidden w-[330px] top-3/4 h-auto left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-center">
+    </section>
+
+    <section id="watch"
+        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-16">
+        <h2 class="text-center p-4">
+            <img src="./image/watch.svg" alt="観に行く">
+        </h2>
+        <div class="w-full flex flex-col md:flex-row justify-between items-start gap-24 md:gap-10">
+            <div class="flex flex-col items-center md:items-start gap-2
+                w-full md:min-w-[350px] max-w-[360px] mx-auto">
+                <img src="./image/far_1.svg" alt="">
+                <img src="./image/far_2.svg" alt="">
+                <img src="./image/far_3.svg" alt="">
+                <img src="./image/far_4.svg" alt="">
+                <img src="./image/far_5.svg" alt="">
+                <img src="./image/far_6.svg" alt="">
+                <img src="./image/far_7.svg" alt="">
+                <img src="./image/far_8.svg" alt="">
+                <img src="./image/far_9.svg" alt="">
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col gap-16">
+                <div class="flex flex-col gap-3.5">
+                    <p class="leading-8 tracking-widest">
+                        〒457-0862<br>愛知県名古屋市南区内田橋1丁目6-10 豊栄ビル 1階
+                    </p>
+                    <div class="ml-auto">
+                        <a href="https://maps.app.goo.gl/kFeDARX9hPKHB1pE9" target="_blank"
+                            class="flex items-center gap-2">
+                            <div
+                                class="p-[5px] pr-[14px] relative after:absolute after:left-0 after:bg-[url(image/map_arraw.svg)] after:bg-no-repeat after:bg-contain after:w-full after:h-full">
+                                <p class="leading-8 tracking-widest">Google Mapで開く</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <section class="flex flex-col gap-3.5">
+                    <h3 class="text-xl font-bold tracking-widest">近辺からお越しの方</h3>
+                    <p class="leading-8 tracking-widest">
+                        地下鉄名城線［熱田神宮伝馬町駅］③番出口より徒歩10分<br>
+                        名鉄［豊田本町駅］改札より徒歩5分<br>
+                        市バス［内田橋バス停］より徒歩3分
+                    </p>
+                </section>
+
+                <section class="flex flex-col gap-3.5">
+                    <h3 class="text-xl font-bold tracking-widest">遠方からお越しの方</h3>
+                    <p class="leading-8 tracking-widest">
+                        東京［東京駅］より約2時間<br>
+                        大阪［大阪駅］より約1時間40分
+                    </p>
+                </section>
+
+                <section class="flex flex-col gap-3.5">
+                    <h3 class="text-xl font-bold tracking-widest">お車でお越しの方</h3>
+                    <p class="leading-8 tracking-widest">建物の隣にコインパーキング有</p>
+                </section>
+            </div>
         </div>
-        <img class="w-[538px] h-48 left-[641px] top-[412px] absolute" src="https://placehold.co/538x200" />
         <div
-            class="left-[562px] top-[666px] absolute text-center justify-start text-gray-950 text-2xl font-light [text-shadow:_0px_0px_6px_rgb(255_255_255_/_1.00)]">
-            舞台芸術を、内田橋から世界へ。 <br />24時間使える劇団［体現帝国］の専用劇場。 <br />地域と共に歩み、社会に必要とされる芸術を創造していきます。 </div>
-    </section>
-    <section class="w-full px-64 pt-72 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
-        <div class="w-[1200px] h-[898px] left-[124px] top-[227px] absolute">
-            <div
-                class="w-[1200px] h-[898px] left-0 top-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full">
-            </div>
-        </div>
-        <div class="self-stretch h-24 relative">
-            <div
-                class="w-[900px] h-24 left-0 top-0 absolute text-center justify-center text-gray-950 text-4xl font-light">
-                観に行く</div>
-        </div>
-        <div class="self-stretch inline-flex justify-between items-start">
-            <div class="p-2.5 inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-                <div class="w-96 h-96 inline-flex flex-col justify-start items-start">
-                    <div class="inline-flex justify-start items-center gap-5">
-                        <div
-                            class="px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 flex justify-center items-center gap-2.5 overflow-hidden">
-                            <div class="text-center justify-start text-gray-950 text-sm font-medium">
-                                新大阪駅</div>
-                        </div>
-                        <div
-                            class="px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 flex justify-center items-center gap-2.5 overflow-hidden">
-                            <div class="text-center justify-start text-gray-950 text-sm font-medium">
-                                東京駅</div>
-                        </div>
-                    </div>
-                    <div
-                        class="w-40 px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="text-center justify-start text-gray-950 text-sm font-medium">名古屋駅
-                        </div>
-                    </div>
-                    <div
-                        class="px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="text-center justify-start text-gray-950 text-sm font-medium">
-                            名鉄名古屋駅</div>
-                    </div>
-                    <div
-                        class="w-40 px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="text-center justify-start text-gray-950 text-sm font-medium">金山駅
-                        </div>
-                    </div>
-                    <div
-                        class="self-stretch px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="text-center justify-start text-gray-950 text-sm font-medium">神宮前駅
-                        </div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-end items-center gap-[5px]">
-                        <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                            電車(地下鉄名城線)で<br />6分</div>
-                        <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-end items-center gap-[5px]">
-                        <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                            電車(名鉄)で<br />2分</div>
-                        <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                    </div>
-                    <div
-                        class="w-40 px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="text-center justify-start text-gray-950 text-sm font-medium">
-                            熱田神宮伝馬町駅</div>
-                    </div>
-                    <div
-                        class="self-stretch px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="text-center justify-start text-gray-950 text-sm font-medium">豊田本町駅
-                        </div>
-                    </div>
-                    <div
-                        class="px-2.5 py-[5px] rounded-[50px] outline outline-1 outline-offset-[-1px] outline-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="text-center justify-start text-gray-950 text-sm font-medium">
-                            内田橋バス停</div>
-                    </div>
-                    <div
-                        class="self-stretch h-10 px-5 py-[5px] bg-gray-950 rounded-[50px] inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div class="justify-start text-gray-100 text-lg font-medium">体現帝国館</div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-end items-center gap-[5px]">
-                        <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                            3番出口より<br />徒歩10分</div>
-                        <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-end items-center gap-[5px]">
-                        <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                            電車(JR)で<br />3~5分</div>
-                        <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-end items-center gap-[5px]">
-                        <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                            電車(名鉄)で<br />6分</div>
-                        <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-end items-center gap-[5px]">
-                        <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                            改札より<br />徒歩5分</div>
-                        <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-end items-center gap-[5px]">
-                        <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                            徒歩3分</div>
-                        <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                    </div>
-                    <div class="self-stretch self-stretch inline-flex justify-between items-center">
-                        <div class="flex justify-end items-center gap-[5px]">
-                            <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                                新幹線で<br />50分</div>
-                            <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                        </div>
-                        <div class="flex justify-end items-center gap-[5px]">
-                            <div class="text-right justify-start text-gray-950 text-xs font-medium leading-4">
-                                新幹線で<br />1時間40分</div>
-                            <div class="w-2.5 h-12 outline outline-1 outline-offset-[-0.50px] outline-gray-950"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-96 inline-flex flex-col justify-start items-center gap-11">
-                <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
-                    <div
-                        class="self-stretch justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        〒457-0862<br />愛知県名古屋市南区内田橋1丁目6-10 豊栄ビル 1階</div>
-                    <div class="self-stretch inline-flex justify-end items-end">
-                        <div class="p-[5px] border-b border-gray-950 flex justify-center items-center gap-2.5">
-                            <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                                Google Mapで開く</div>
-                        </div>
-                        <div class="w-3.5 h-2.5 border border-gray-950"></div>
-                    </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-center items-start gap-3.5">
-                    <div class="self-stretch justify-start text-gray-950 text-xl font-bold tracking-widest">
-                        近辺からお越しの方</div>
-                    <div
-                        class="self-stretch justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        地下鉄名城線［熱田神宮伝馬町駅］③番出口より徒歩10分 名鉄［豊田本町駅］改札より徒歩5分 市バス［内田橋バス停］より徒歩3分</div>
-                </div>
-                <div class="self-stretch flex flex-col justify-center items-start gap-3.5">
-                    <div class="self-stretch justify-start text-gray-950 text-xl font-bold tracking-widest">
-                        遠方からお越しの方</div>
-                    <div
-                        class="self-stretch justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        東京［東京駅］より約2時間 大阪［大阪駅］より約1時間40分</div>
-                </div>
-                <div class="self-stretch flex flex-col justify-center items-start gap-3.5">
-                    <div class="self-stretch justify-start text-gray-950 text-xl font-bold tracking-widest">
-                        お車でお越しの方</div>
-                    <div
-                        class="self-stretch justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        建物の隣にコインパーキング有</div>
-                </div>
-            </div>
+            class="w-full h-full inset-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full z-[-10]">
         </div>
     </section>
-    <section class="w-full px-64 pt-36 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
-        <div class="w-[1200px] h-[1152px] left-[120px] top-[80px] absolute">
-            <div
-                class="w-[1200px] h-[1152px] left-0 top-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full">
-            </div>
-        </div>
-        <div class="self-stretch h-24 relative">
-            <div
-                class="w-[900px] h-24 left-0 top-0 absolute text-center justify-center text-gray-950 text-4xl font-light">
-                借りる</div>
-        </div>
-        <div class="w-[800px] flex flex-col justify-start items-center gap-14">
-            <div class="text-center justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                体現帝国館は24時間ご利用いただけます。 </div>
-            <div class="flex flex-col justify-start items-center gap-7">
-                <div class="text-center justify-start text-gray-950 text-xl font-bold tracking-widest">
-                    利用条件 </div>
-                <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                    -使用時間の前後15分は入退室が可能です。 <br />-広さ：幅5m × 奥行9m × 高さ4.4m <br />-想定用途：演劇練習／ダンス練習／音楽練習／写真撮影／美術製作 など </div>
-            </div>
-            <div class="flex flex-col justify-start items-center gap-7">
-                <div class="text-center justify-start text-gray-950 text-xl font-bold tracking-widest">
+
+    <section id="rent"
+        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-16 overflow-hidden">
+        <h2 class="text-center p-4">
+            <img src="./image/rent.svg" alt="借りる">
+        </h2>
+        <div class="flex flex-col justify-start items-center gap-16">
+            <p class="text-center justify-start leading-8 tracking-widest">
+                体現帝国館は24時間ご利用いただけます。</p>
+            <section class="flex flex-col justify-start items-center gap-7">
+                <h3 class="text-center justify-start text-xl font-bold tracking-widest">
+                    利用条件</h3>
+                <ul class='pl-6 leading-8 tracking-widest list-["-"]'>
+                    <li>使用時間の前後15分は入退室が可能です。</li>
+                    <li>広さ：幅5m × 奥行9m × 高さ4.4m</li>
+                    <li>想定用途：演劇練習／ダンス練習／音楽練習／写真撮影／美術製作 など</li>
+                </ul>
+            </section>
+            <div class="flex flex-col justify-start items-center gap-7 w-full">
+                <div class="text-center justify-start text-xl font-bold tracking-widest">
                     利用料金 </div>
-                <div class="w-72 h-72 inline-flex flex-col justify-start items-start">
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            1時間</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-r border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            1,000円</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            6時間</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-r border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            5,000円</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            12時間</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-r border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            10,000円</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            18時間</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-r border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            15,000円</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            24時間</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-r border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            20,000円</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            機材使用料</div>
-                    </div>
-                    <div
-                        class="self-stretch self-stretch px-5 py-2.5 border-r border-b border-gray-950 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div
-                            class="text-right justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            別途5,000円</div>
-                    </div>
-                </div>
+                <table class="border-separate border-spacing-y-0 w-4/5">
+                    <tbody class="flex flex-col items-start gap-2">
+                        <tr class="flex gap-4 justify-between w-full">
+                            <th class="px-5 py-2.5 border-b border-gray-950 text-center tracking-widest flex-1">1時間</th>
+                            <td class="px-4 py-2.5 border-b border-r border-gray-950 text-right tracking-widest flex-1">
+                                1,000円
+                            </td>
+                        </tr>
+                        <tr class="flex gap-4 justify-between w-full">
+                            <th class="px-5 py-2.5 border-b border-gray-950 text-center tracking-widest flex-1">6時間</th>
+                            <td class="px-4 py-2.5 border-b border-r border-gray-950 text-right tracking-widest flex-1">
+                                5,000円
+                            </td>
+                        </tr>
+                        <tr class="flex gap-4 justify-between w-full">
+                            <th class="px-5 py-2.5 border-b border-gray-950 text-center tracking-widest flex-1">12時間
+                            </th>
+                            <td class="px-4 py-2.5 border-b border-r border-gray-950 text-right tracking-widest flex-1">
+                                10,000円
+                            </td>
+                        </tr>
+                        <tr class="flex gap-4 justify-between w-full">
+                            <th class="px-5 py-2.5 border-b border-gray-950 text-center tracking-widest flex-1">18時間
+                            </th>
+                            <td class="px-4 py-2.5 border-b border-r border-gray-950 text-right tracking-widest flex-1">
+                                15,000円
+                            </td>
+                        </tr>
+                        <tr class="flex gap-4 justify-between w-full">
+                            <th class="px-5 py-2.5 border-b border-gray-950 text-center tracking-widest flex-1">24時間
+                            </th>
+                            <td class="px-4 py-2.5 border-b border-r border-gray-950 text-right tracking-widest flex-1">
+                                20,000円
+                            </td>
+                        </tr>
+                        <tr class="flex gap-4 justify-between w-full">
+                            <th class="px-5 py-2.5 border-b border-gray-950 text-center tracking-widest flex-1">機材使用料
+                            </th>
+                            <td class="px-4 py-2.5 border-b border-r border-gray-950 text-right tracking-widest flex-1">
+                                別途5,000円
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="flex flex-col justify-start items-center gap-7">
-                <div class="text-center justify-start text-gray-950 text-xl font-bold tracking-widest">
-                    お申し込み  </div>
-                <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                    利用を希望される方は、下記フォームまでご連絡ください。 </div>
-                <div class="inline-flex justify-center items-end">
-                    <div class="p-[5px] border-b border-gray-950 flex justify-center items-center gap-2.5">
-                        <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            レンタルを申し込む</div>
-                    </div>
-                    <div class="w-3.5 h-2.5 border border-gray-950"></div>
+            <section class="flex flex-col justify-start items-center gap-7">
+                <h3 class="text-center justify-start text-xl font-bold tracking-widest">
+                    お申し込み</h3>
+                <p class="justify-start leading-8 tracking-widest">
+                    利用を希望される方は、下記フォームまでご連絡ください。</p>
+                <div class="md:mx-[auto] ml-[auto]">
+                    <a href="#" target="_blank">
+                        <div
+                            class="p-[5px] pr-[14px] relative after:absolute after:left-0 after:bg-[url(image/rent_arraw.svg)] after:bg-no-repeat after:bg-contain after:w-full after:h-full">
+                            <p class="justify-start leading-8 tracking-widest">
+                                レンタルを申し込む</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
+            </section>
+        </div>
+        <div
+            class="w-full h-full inset-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full z-[-10]">
         </div>
     </section>
-    <section class="w-full px-64 pt-36 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
-        <div class="w-[1200px] h-[1437px] left-[120px] top-[80px] absolute">
-            <div
-                class="w-[1200px] h-[1437px] left-0 top-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full">
-            </div>
-        </div>
-        <div class="self-stretch h-24 relative">
-            <div
-                class="w-[900px] h-24 left-0 top-0 absolute text-center justify-center text-gray-950 text-4xl font-light">
-                上演／展示する</div>
-        </div>
-        <div class="w-[800px] flex flex-col justify-start gap-14">
-            <div class="self-stretch justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                体現帝国館は貸館営業を行っておりません。 <br />御利用を希望の場合は、申し込みフォームより応募いただき審査を通過した方のみ体現帝国との共催事業として利用いただけます。 <br />舞台上演に限らず、音楽イベントやワークショップ、展示等での御利用も可能です。 <br />度肝を抜く企画を持ち込みください。 
-            </div>
+
+    <section id="use"
+        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        <h2 class="text-center p-4">
+            <img src="./image/use.svg" alt="上演/展示する">
+        </h2>
+        <div class="w-full max-w-[800px] flex flex-col justify-start gap-14">
+            <p class="self-stretch justify-start leading-8 tracking-widest">
+                体現帝国館は貸館営業を行っておりません。
+                <br />御利用を希望の場合は、申し込みフォームより応募いただき審査を通過した方のみ体現帝国との共催事業として利用いただけます。
+                <br />舞台上演に限らず、音楽イベントやワークショップ、展示等での御利用も可能です。
+                <br />度肝を抜く企画を持ち込みください。
+            </p>
             <div class="flex flex-col justify-start items-center gap-7">
-                <div class="text-center justify-start text-gray-950 text-xl font-bold tracking-widest">
-                    利用条件 </div>
-                <div class="w-[800px] h-52 inline-flex flex-col justify-start items-start">
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        対象</div>
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        愛知県外に活動拠点を置く個人または団体（演劇団体に限りません） </div>
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        利用期間</div>
-                    <div
-                        class="w-[668px] text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        1～5月または10～12月の期間より希望する二週間をお貸しします。期間中、稽古・上演・ワークショップ・展示・その他イベント等を自由に組むことが可能です。 </div>
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        客席数</div>
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        30席程度 </div>
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        利用料金</div>
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        公演売上の30％ </div>
-                </div>
-            </div>
-            <div class="w-[694px] flex flex-col justify-start items-start gap-7">
-                <div class="text-center justify-start text-gray-950 text-xl font-bold tracking-widest">
-                    上演を検討する県外の方々へ </div>
-                <div class="flex flex-col justify-start items-center gap-2.5">
-                    <div
-                        class="self-stretch justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        県外からの企画を実現しやすくする工夫として以下を行います。 </div>
-                    <div
-                        class="text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                        -利用料金を定額ではなく共同収益方式とすることで金銭的な不安を軽減します。 <br />-広報に体現帝国が協力することで集客面での不安を軽減します。 <br />-24時間使用可能な環境を2週間お渡しすることで、作品制作に集中いただけます。 
+                <h3 class="text-center justify-start text-xl font-bold tracking-widest">
+                    利用条件</h3>
+                <dl class="w-full flex flex-col gap-6 leading-8 tracking-widest">
+                    <div class="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-8">
+                        <dt class="font-bold md:w-20">対象</dt>
+                        <dd class="md:flex-1">
+                            愛知県外に活動拠点を置く個人または団体（演劇団体に限りません）
+                        </dd>
                     </div>
-                </div>
+
+                    <div class="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-8">
+                        <dt class="font-bold md:w-20">利用期間</dt>
+                        <dd class="md:flex-1">
+                            1～5月または10～12月の期間より希望する二週間をお貸しします。期間中、稽古・上演・ワークショップ・展示・その他イベント等を自由に組むことが可能です。
+                        </dd>
+                    </div>
+
+                    <div class="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-8">
+                        <dt class="font-bold md:w-20">客席数</dt>
+                        <dd class="md:flex-1">30席程度</dd>
+                    </div>
+
+                    <div class="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-8">
+                        <dt class="font-bold md:w-20">利用料金</dt>
+                        <dd class="md:flex-1">公演売上の30％</dd>
+                    </div>
+                </dl>
             </div>
-            <div class="w-[694px] flex flex-col justify-start items-start gap-7">
-                <div class="text-center justify-start text-gray-950 text-xl font-bold tracking-widest">
-                    観客の皆さんへ  </div>
-                <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                    -審査を通じて、良質な作品を提供します。 <br />-愛知県では観られない作品を提供します。 </div>
-            </div>
+            <section class="w-[694px] flex flex-col justify-start items-start gap-7">
+                <h3 class="text-center justify-start text-xl font-bold tracking-widest">
+                    上演を検討する県外の方々へ</h3>
+                <dl class="flex flex-col justify-start items-center gap-2.5">
+                    <dt class="self-stretch justify-start leading-8 tracking-widest">
+                        県外からの企画を実現しやすくする工夫として以下を行います。</dt>
+                    <dd class="text-justify justify-start leading-8 tracking-widest">
+                        -利用料金を定額ではなく共同収益方式とすることで金銭的な不安を軽減します。
+                        <br />-広報に体現帝国が協力することで集客面での不安を軽減します。
+                        <br />-24時間使用可能な環境を2週間お渡しすることで、作品制作に集中いただけます。
+                    </dd>
+                </dl>
+            </section>
+            <section class="w-[694px] flex flex-col justify-start items-start gap-7">
+                <h3 class="text-center justify-start text-xl font-bold tracking-widest">
+                    観客の皆さんへ</h3>
+                <p class="justify-start leading-8 tracking-widest">
+                    -審査を通じて、良質な作品を提供します。
+                    <br />-愛知県では観られない作品を提供します。
+                </p>
+            </section>
             <div class="flex flex-col justify-start items-center gap-7">
-                <div class="text-center justify-start text-gray-950 text-xl font-bold tracking-widest">
+                <div class="text-center justify-start text-xl font-bold tracking-widest">
                     お申し込み </div>
-                <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
+                <div class="justify-start leading-8 tracking-widest">
                     体現帝国館での上演や展示を希望される方は、以下のフォームよりお申し込みください。 </div>
-                <div class="inline-flex justify-center items-end">
-                    <div class="p-[5px] border-b border-gray-950 flex justify-center items-center gap-2.5">
-                        <div class="justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                            上演・展示利用を申し込む</div>
-                    </div>
-                    <div class="w-3.5 h-2.5 border border-gray-950"></div>
+                <div class="md:mx-[auto] ml-[auto]">
+                    <a href="#" target="_blank">
+                        <div
+                            class="p-[5px] pr-[14px] relative after:absolute after:left-0 after:bg-[url(image/use_arraw.svg)] after:bg-no-repeat after:bg-contain after:w-full after:h-full">
+                            <p class="justify-start leading-8 tracking-widest">
+                                上演・展示利用を申し込む</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
+        <div
+            class="w-full h-full inset-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full z-[-10]">
+        </div>
     </section>
-    <section class="w-full px-64 pt-36 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
-        <div class="w-[1200px] h-[726px] left-[120px] top-[80px] absolute">
-            <div
-                class="w-[1200px] h-[726px] left-0 top-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full">
-            </div>
-        </div>
-        <div class="self-stretch h-24 relative">
-            <div
-                class="w-[900px] h-24 left-0 top-0 absolute text-center justify-center text-gray-950 text-4xl font-light">
-                体現帝国館とは</div>
-        </div>
-        <div class="w-[800px] flex flex-col justify-start items-center gap-2.5">
-            <div
-                class="self-stretch text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
+
+    <section id="about"
+        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        <h2 class="text-center p-4">
+            <img src="./image/about.svg" alt="体現帝国館とは">
+        </h2>
+        <div class="w-full flex flex-col justify-start items-center gap-2.5">
+            <div class="self-stretch text-justify justify-start leading-8 tracking-widest">
                 名古屋市南区内田橋にある電気工務店の旧倉庫を2024年1月より劇団［体現帝国］が借り、＜稽古・作業・上演・打ち上げ＞演劇に関する全てが完結する専用劇場として改装を施す。2025年4月にこけら落とし公演を行い、以降は劇団の活動を最優先としながら内田橋商店街と連携し劇場運営を行う。 
             </div>
         </div>
-        <div class="w-[700px] flex flex-col justify-start items-center gap-7">
-            <div
-                class="self-stretch p-7 bg-white/50 shadow-[4px_4px_8px_0px_rgba(0,0,0,0.50)] outline outline-2 outline-offset-[-2px] outline-gray-950 flex flex-col justify-center items-center gap-7">
-                <div class="text-justify justify-start text-gray-950 text-xl font-bold tracking-widest">
-                    主宰からのメッセージ∨</div>
-                <div
-                    class="self-stretch text-justify justify-start text-gray-950 text-base font-medium leading-8 tracking-widest">
-                    ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示
+        <div class="w-full flex flex-col justify-center items-center">
+            <div id="msgCard"
+                class="self-stretch p-7 bg-white/60 shadow-[4px_4px_8px_0px_rgba(0,0,0,0.4)] outline outline-2 outline-offset-[-2px] outline-gray-950 flex flex-col gap-4 overflow-hidden transition-all duration-300 w-[320px] mx-auto">
+
+                <button id="msgToggle"
+                    class="w-full flex justify-between items-center text-left text-xl font-bold tracking-widest select-none">
+                    <span>主宰からのメッセージ</span>
+                    <span id="msgIcon" class="transition-transform duration-300">∨</span>
+                </button>
+
+                <div id="msgBody"
+                    class="hidden opacity-0 translate-y-[-4px] transition-all duration-300 leading-8 tracking-widest"
+                    style="transition: width 0.25s ease, height 0.35s ease;">
+                    ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示ここにメッセージを表示
                 </div>
             </div>
+        </div>
+        <div
+            class="w-full h-full inset-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full z-[-10]">
         </div>
     </section>
-    <section class="w-full px-64 pt-36 pb-60 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
-        <div class="w-[1200px] h-[536px] left-[120px] top-[80px] absolute">
-            <div
-                class="w-[1200px] h-[536px] left-0 top-0 absolute bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_rgba(255,_255,_255,_0.50)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-full">
-            </div>
-        </div>
-        <div class="self-stretch h-24 relative">
-            <div
-                class="w-[900px] h-24 left-0 top-0 absolute text-center justify-center text-gray-950 text-4xl font-light">
-                各種資料</div>
-        </div>
-        <div class="flex flex-col justify-start items-center gap-3.5">
-            <div class="self-stretch inline-flex justify-start items-center gap-[5px]">
-                <div class="justify-start text-gray-950 text-base font-medium tracking-widest">−各種図面
-                </div>
-                <img class="w-4 h-4" src="https://placehold.co/18x18" />
-            </div>
-            <div class="self-stretch inline-flex justify-start items-center gap-[5px]">
-                <div class="justify-start text-gray-950 text-base font-medium tracking-widest">−設備資料 
-                </div>
-                <img class="w-4 h-4" src="https://placehold.co/18x18" />
-            </div>
-            <div class="self-stretch inline-flex justify-start items-center gap-[5px]">
-                <div class="justify-start text-gray-950 text-base font-medium tracking-widest">−ロゴ類 
-                </div>
-                <img class="w-4 h-4" src="https://placehold.co/18x18" />
-            </div>
-            <div class="self-stretch inline-flex justify-start items-center gap-[5px]">
-                <div class="justify-start text-gray-950 text-base font-medium tracking-widest">−注意事項 
-                </div>
-                <img class="w-4 h-4" src="https://placehold.co/18x18" />
-            </div>
-        </div>
+
+    <section id="document"
+        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-72 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        <h2 class="text-center p-4">
+            <img src="./image/document.svg" alt="各種資料">
+        </h2>
+        <ul class='leading-8 tracking-widest list-none'>
+            <li class="flex items-center gap-2 mb-4">-各種図面 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            <li class="flex items-center gap-2 mb-4">-設備資料 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            <li class="flex items-center gap-2 mb-4">-ロゴ類 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            <li class="flex items-center gap-2 mb-4">-注意事項 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+        </ul>
     </section>
-    <div class="w-full px-52 pt-28 pb-14 bg-gray-950 flex flex-col justify-start items-center gap-14 overflow-hidden">
-        <div class="inline-flex justify-start items-start gap-60">
-            <div class="inline-flex flex-col justify-start items-start gap-2.5">
-                <div class="text-center justify-start text-gray-100 text-xl font-medium underline tracking-widest">
-                    観に行く</div>
-                <div class="text-center justify-start text-gray-100 text-xl font-medium underline tracking-widest">
-                    借りる</div>
-                <div class="text-center justify-start text-gray-100 text-xl font-medium underline tracking-widest">
-                    上演／展示する</div>
-                <div class="text-center justify-start text-gray-100 text-xl font-medium underline tracking-widest">
-                    体現帝国館とは</div>
+
+    <div class="w-full pt-28 pb-14 bg-gray-950 flex flex-col items-center gap-14 overflow-hidden">
+        <div class="md:w-4/5 w-9/10 flex flex-col md:flex-row justify-between items-start gap-12 max-w-[1200px]">
+            <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
+                <ul class="list-none text-xl leading-8">
+                    <a href="#watch">
+                        <li class="underline mb-2.5">観に行く</li>
+                    </a>
+                    <a href="#rent">
+                        <li class="underline mb-2.5">借りる</li>
+                    </a>
+                    <a href="#use">
+                        <li class="underline mb-2.5">上演／展示する</li>
+                    </a>
+                    <a href="#about">
+                        <li class="underline mb-2.5">体現帝国館とは</li>
+                    </a>
+                </ul>
             </div>
-            <div class="inline-flex flex-col justify-start items-start gap-2.5">
-                <div class="text-center justify-start text-gray-100 text-xl font-medium underline tracking-widest">
-                    各種資料</div>
-                <div class="flex flex-col justify-start items-center gap-2.5">
-                    <div class="self-stretch inline-flex justify-start items-center gap-2.5">
-                        <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                            −各種図面</div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-start items-center gap-2.5">
-                        <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                            −設備資料 </div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-start items-center gap-2.5">
-                        <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                            −ロゴ類 </div>
-                    </div>
-                    <div class="self-stretch inline-flex justify-start items-center gap-2.5">
-                        <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                            −注意事項 </div>
-                    </div>
-                </div>
+
+            <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
+                <h4 class="underline text-xl">各種資料</h4>
+                <ul class='pl-6 leading-8 tracking-widest list-["-"]'>
+                    <li>各種図面</li>
+                    <li>設備資料</li>
+                    <li>ロゴ類</li>
+                    <li>注意事項</li>
+                </ul>
             </div>
-            <div class="inline-flex flex-col justify-start items-start gap-2.5">
-                <img class="w-48 h-20" src="https://placehold.co/200x74" />
-                <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                    代表　渡部剛己</div>
-                <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                    Mail : taigenteikoku@gmail.com</div>
-                <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                    Tel : 080-6944-6915</div>
-                <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
-                    〒457-0862<br />愛知県名古屋市南区内田橋1丁目6-10 豊栄ビル 1階</div>
-                <div class="inline-flex justify-start items-center gap-7">
-                    <img class="w-7 h-8" src="https://placehold.co/30x31" />
-                    <img class="w-7 h-7" src="https://placehold.co/30x30" />
-                    <img class="w-7 h-7" src="https://placehold.co/30x30" />
-                    <img class="w-7 h-5" src="https://placehold.co/30x21" />
+
+            <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
+                <img class="w-40 h-auto" src="./image/taigenteikokukan_logo.png" alt="体現帝国館" />
+                <p>代表　渡部剛己</p>
+                <p>Mail : taigenteikoku@gmail.com</p>
+                <p>Tel : 080-6944-6915</p>
+                <p>〒457-0862<br>愛知県名古屋市南区内田橋1丁目6-10 豊栄ビル 1階</p>
+
+                <div class="inline-flex items-center gap-4 mt-2">
+                    <a href="https://x.com/taigenteikoku" target="_blank">
+                        <img class="w-6" src="./image/logo.svg" />
+                    </a>
+                    <a href="https://www.instagram.com/taigenteikoku/" target="_blank">
+                        <img class="w-6" src="./image/Instagram_Glyph_White.svg" />
+                    </a>
+                    <a href="https://www.facebook.com/taigenteikoku/" target="_blank">
+                        <img class="w-6" src="./image/Facebook_Logo_Secondary.png" />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCrYWJTqdJ6MsD54DqECi3sA" target="_blank">
+                        <img class="w-6" src="./image/yt_icon_mono_dark.png" />
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="justify-start text-gray-100 text-base font-medium leading-8 tracking-widest">
+        <div class="justify-start text-gray-100 leading-8 tracking-widest">
             ©体現帝国</div>
     </div>
+</body>
+<script>
+    const msgToggle = document.getElementById("msgToggle");
+    const msgBody = document.getElementById("msgBody");
+    const msgIcon = document.getElementById("msgIcon");
+    const msgCard = document.getElementById("msgCard");
+
+    let expanded = false;
+
+    // 初期状態のカード高さ（ボタン分だけ）
+    function getButtonHeight() {
+        return msgToggle.offsetHeight + 40; // padding分
+    }
+
+    // 初期高さ設定（余白バグ防止）
+    msgCard.style.height = getButtonHeight() + "px";
+
+    msgToggle.addEventListener("click", () => {
+        expanded = !expanded;
+
+        if (expanded) {
+            // 横に広がる
+            msgCard.style.width = "100%";
+
+            // 一旦隠れている本文を表示（高さ計測用）
+            msgBody.classList.remove("hidden");
+
+            // 縦アニメを自然にするため、一瞬待つ
+            requestAnimationFrame(() => {
+                msgBody.classList.remove("opacity-0", "translate-y-[-4px]");
+
+                // 本文高さ＋ボタン高さ
+                const fullHeight = msgBody.scrollHeight + getButtonHeight();
+                msgCard.style.height = fullHeight + "px";
+            });
+
+            msgIcon.style.transform = "rotate(180deg)";
+        } else {
+            // 不透明 → 透明
+            msgBody.classList.add("opacity-0", "translate-y-[-4px]");
+
+            // 高さを先に縮める
+            msgCard.style.height = getButtonHeight() + "px";
+
+            // 縮み終わったら本文を再び隠す
+            setTimeout(() => {
+                msgBody.classList.add("hidden");
+            }, 250);
+
+            // 横を最後に戻す
+            setTimeout(() => {
+                msgCard.style.width = "320px";
+            }, 300);
+
+            msgIcon.style.transform = "rotate(0deg)";
+        }
+    });
+</script>
+<script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+</script>
+
 </body>
 
 
