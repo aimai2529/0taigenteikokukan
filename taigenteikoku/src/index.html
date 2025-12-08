@@ -5,16 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
     <title>体現帝国館</title>
 </head>
 
 <body
     class="w-screen relative inline-flex flex-col justify-start items-center font-zen-old-mincho font-medium text-gray-950">
 
+    <div id="introOverlay"
+        class="fixed inset-0 z-[200] flex flex-col justify-center items-center bg-white opacity-100 transition-opacity duration-700">
+        <img src="./image/taigenteikokukan_logo.png"
+            class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute" />
+    </div>
+
     <video autoplay muted loop src="./image/background6.mp4"
         class="fixed z-[-99] w-full h-full inset-0 object-cover"></video>
 
-    <header class="w-full h-28 md:px-14 px-4 inset-0 fixed z-50 flex justify-between items-center">
+    <header
+        class="opacity-0 pointer-events-none transition-opacity duration-500 w-full h-28 md:px-14 px-4 inset-0 fixed z-50 flex justify-between items-center">
         <h1>
             <a href="./index.html"><img class="w-48 h-auto" src="./image/taigenteikokukan_logo.png" alt="体現帝国館" /></a>
         </h1>
@@ -39,14 +51,14 @@
             </ul>
         </nav>
         <button id="menuBtn" class="md:hidden flex flex-col gap-1.5">
-            <span class="w-8 h-0.5 bg-gray-950"></span>
-            <span class="w-8 h-0.5 bg-gray-950"></span>
-            <span class="w-8 h-0.5 bg-gray-950"></span>
+            <span id="line1" class="w-8 h-0.5 bg-gray-950 transition-all duration-300"></span>
+            <span id="line2" class="w-8 h-0.5 bg-gray-950 transition-all duration-300"></span>
+            <span id="line3" class="w-8 h-0.5 bg-gray-950 transition-all duration-300"></span>
         </button>
     </header>
 
     <div id="mobileMenu"
-        class="md:hidden hidden flex flex-col items-start gap-6 w-full bg-white/90 px-10 py-8 tracking-widest text-lg fixed top-28 left-0 z-40">
+        class="md:hidden hidden flex flex-col items-start justify-center gap-10 w-full h-screen bg-white/80 backdrop-blur-sm px-10 tracking-widest text-xl fixed top-0 left-0 z-40 transition-opacity duration-300 opacity-0">
         <a href="#watch" class="leading-8">観に行く</a>
         <a href="#rent" class="leading-8">借りる</a>
         <a href="#use" class="leading-8">上演／展示する</a>
@@ -55,13 +67,24 @@
     </div>
 
     <section class="w-full h-screen relative">
-        <img class="w-full h-full inset-0 absolute object-cover" src="image/top1.jpg" />
-        <img class="w-[538px] h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute"
+        <div id="bgSlideshow" class="absolute inset-0 w-full h-full">
+            <img src="image/top1.png"
+                class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-[1500ms]" />
+            <img src="image/top2.png"
+                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[1500ms]" />
+            <img src="image/top3.png"
+                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[1500ms]" />
+            <img src="image/top4.png"
+                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[1500ms]" />
+        </div>
+        <div id="introWhiteOverlay"
+            class="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-[1200ms]"
+            style="background: linear-gradient(to bottom, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0) 100%);">
+        </div>
+        <img class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute"
             src="./image/taigenteikokukan_logo.png" alt="体現帝国館" />
-        <img src="./image/introduction.svg" alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"
-            class="hidden md:inline w-[695px] top-3/4 h-auto left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-center">
         <img src="./image/intro.svg" alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"
-            class="md:hidden w-[330px] top-3/4 h-auto left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-center">
+            class="opacity-0 hidden inline w-[420px] max-w-4/5 top-3/4 h-auto left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-center transition-opacity duration-700">
     </section>
 
     <section id="watch"
@@ -341,6 +364,7 @@
         </ul>
     </section>
 
+    <div class="w-full h-30 pointer-events-none bg-gradient-to-b from-transparent to-gray-950"></div>
     <div class="w-full pt-28 pb-14 bg-gray-950 flex flex-col items-center gap-14 overflow-hidden">
         <div class="md:w-4/5 w-9/10 flex flex-col md:flex-row justify-between items-start gap-12 max-w-[1200px]">
             <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
@@ -396,73 +420,213 @@
         <div class="justify-start text-gray-100 leading-8 tracking-widest">
             ©体現帝国</div>
     </div>
-</body>
-<script>
-    const msgToggle = document.getElementById("msgToggle");
-    const msgBody = document.getElementById("msgBody");
-    const msgIcon = document.getElementById("msgIcon");
-    const msgCard = document.getElementById("msgCard");
+    <script>
+        // DOM references
+        if (window.scrollY > 20) {
+            // --- ページトップ以外でリロードしたときの初期状態 ---
+            const introOverlay = document.getElementById("introOverlay");
+            const introWhite = document.getElementById("introWhiteOverlay");
+            const header = document.querySelector("header");
+            const introTexts = document.querySelectorAll('img[alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"]');
 
-    let expanded = false;
+            // ロゴオーバーレイは出さない
+            introOverlay.style.display = "none";
 
-    // 初期状態のカード高さ（ボタン分だけ）
-    function getButtonHeight() {
-        return msgToggle.offsetHeight + 40; // padding分
-    }
+            // 白フィルターは常に表示
+            introWhite.style.opacity = "1";
 
-    // 初期高さ設定（余白バグ防止）
-    msgCard.style.height = getButtonHeight() + "px";
-
-    msgToggle.addEventListener("click", () => {
-        expanded = !expanded;
-
-        if (expanded) {
-            // 横に広がる
-            msgCard.style.width = "100%";
-
-            // 一旦隠れている本文を表示（高さ計測用）
-            msgBody.classList.remove("hidden");
-
-            // 縦アニメを自然にするため、一瞬待つ
-            requestAnimationFrame(() => {
-                msgBody.classList.remove("opacity-0", "translate-y-[-4px]");
-
-                // 本文高さ＋ボタン高さ
-                const fullHeight = msgBody.scrollHeight + getButtonHeight();
-                msgCard.style.height = fullHeight + "px";
+            // introテキストを表示
+            introTexts.forEach(el => {
+                el.classList.remove("hidden", "opacity-0");
             });
 
-            msgIcon.style.transform = "rotate(180deg)";
+            // ヘッダーを最初から表示
+            header.classList.remove("opacity-0", "pointer-events-none");
+
+            // 以降のアニメ演出は全部スキップするため、この後の else 部分を実行しない
         } else {
-            // 不透明 → 透明
-            msgBody.classList.add("opacity-0", "translate-y-[-4px]");
+            const introOverlay = document.getElementById("introOverlay");
+            const header = document.querySelector("header");
+            const introTexts = document.querySelectorAll('#about section img.hidden, #watch section img.hidden, img[alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"]');
 
-            // 高さを先に縮める
-            msgCard.style.height = getButtonHeight() + "px";
-
-            // 縮み終わったら本文を再び隠す
+            // Step timings
+            // t=0   → logo only
+            // t=1500→ background visible
+            // t=3000→ fade background image, show intro text, fade in gradient mask
             setTimeout(() => {
-                msgBody.classList.add("hidden");
-            }, 250);
+                introOverlay.style.opacity = "0";        // fade out logo overlay
+            }, 1500);
 
-            // 横を最後に戻す
             setTimeout(() => {
-                msgCard.style.width = "320px";
-            }, 300);
+                // Fade in intro text
+                introTexts.forEach(el => {
+                    el.classList.remove("hidden");
+                    setTimeout(() => el.classList.remove("opacity-0"), 50);
+                });
 
-            msgIcon.style.transform = "rotate(0deg)";
+                // Fade in semi-transparent white overlay instead of brightness
+                setTimeout(() => {
+                    document.getElementById("introWhiteOverlay").style.opacity = "1";
+                }, 50);
+            }, 3000);
+
+            setTimeout(() => {
+                introOverlay.style.display = "none";     // remove overlay
+            }, 2300);
+
+            // Show header once user scrolls a little
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    header.classList.remove("opacity-0", "pointer-events-none");
+                }
+            });
+
+            // Slideshow logic
+            const slides = document.querySelectorAll('#bgSlideshow img');
+            let currentSlide = 0;
+
+            function changeSlide() {
+                slides[currentSlide].style.opacity = "0";
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].style.opacity = "1";
+            }
+
+            // Start slideshow after white filter appears
+            setTimeout(() => {
+                setInterval(changeSlide, 6000);
+            }, 3000);
         }
-    });
-</script>
-<script>
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("mobileMenu");
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
-</script>
+    </script>
+    <!-- メッセージカードトグル -->
+    <script>
+        const msgToggle = document.getElementById("msgToggle");
+        const msgBody = document.getElementById("msgBody");
+        const msgIcon = document.getElementById("msgIcon");
+        const msgCard = document.getElementById("msgCard");
 
+        let expanded = false;
+
+        // ボタン高さを常に取得
+        function getButtonHeight() {
+            return msgToggle.offsetHeight + 56;
+        }
+
+        // 初期化
+        msgCard.style.height = getButtonHeight() + "px";
+
+        // アニメーション
+        msgToggle.addEventListener("click", () => {
+            expanded = !expanded;
+
+            if (expanded) {
+                // ------------------------------
+                // ① 横に広がる（先に幅だけ伸ばす）
+                // ------------------------------
+                msgCard.style.width = "100%";
+
+                // 本文を見える状態に（透明のまま）
+                msgBody.classList.remove("hidden");
+
+                // 幅が広がってから縦が広がるように
+                setTimeout(() => {
+                    // 本文フェードイン
+                    msgBody.classList.remove("opacity-0", "translate-y-[-4px]");
+
+                    // ------------------------------
+                    // ② 縦に広がる（本文高さ + ボタン高さ）
+                    // ------------------------------
+                    const targetHeight = msgBody.scrollHeight + 28 + getButtonHeight();
+                    msgCard.style.height = targetHeight + "px";
+                }, 200); // 横伸び後に縦アニメ
+
+                msgIcon.style.transform = "rotate(180deg)";
+
+            } else {
+                // ------------------------------
+                // 閉じるとき（縦→横）
+                // ------------------------------
+
+                // 本文フェードアウト
+                msgBody.classList.add("opacity-0", "translate-y-[-4px]");
+
+                // 先に縦だけ戻す
+                msgCard.style.height = getButtonHeight() + "px";
+
+                // 縮んでから本文非表示
+                setTimeout(() => {
+                    msgBody.classList.add("hidden");
+                }, 250);
+
+                // 横を最後に戻す
+                setTimeout(() => {
+                    msgCard.style.width = "320px";
+                }, 350);
+
+                msgIcon.style.transform = "rotate(0deg)";
+            }
+        });
+    </script>
+    <!-- ハンバーガーメニュー -->
+    <script>
+        const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("mobileMenu");
+
+        const line1 = document.getElementById("line1");
+        const line2 = document.getElementById("line2");
+        const line3 = document.getElementById("line3");
+
+        let menuOpen = false;
+
+        // メニュー内リンク押下でメニューを閉じる
+        const mobileLinks = menu.querySelectorAll("a");
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                menuOpen = false;
+
+                // フェードアウトして非表示に
+                menu.classList.add("opacity-0");
+                setTimeout(() => {
+                    menu.classList.add("hidden");
+                }, 250);
+
+                // バッテン → ハンバーガーに戻す
+                line1.style.transform = "translateY(0) rotate(0deg)";
+                line2.style.opacity = "1";
+                line3.style.transform = "translateY(0) rotate(0deg)";
+            });
+        });
+
+        btn.addEventListener("click", () => {
+            menuOpen = !menuOpen;
+
+            if (menuOpen) {
+                // メニュー表示
+                menu.classList.remove("hidden");
+                setTimeout(() => {
+                    menu.classList.remove("opacity-0");
+                }, 10);
+
+                // ハンバーガー → バッテン
+                line1.style.transform = "translateY(8px) rotate(45deg)";
+                line2.style.opacity = "0";
+                line3.style.transform = "translateY(-8px) rotate(-45deg)";
+
+            } else {
+                // メニュー非表示
+                menu.classList.add("opacity-0");
+                setTimeout(() => {
+                    menu.classList.add("hidden");
+                }, 250);
+
+                // バッテン → ハンバーガー
+                line1.style.transform = "translateY(0) rotate(0deg)";
+                line2.style.opacity = "1";
+                line3.style.transform = "translateY(0) rotate(0deg)";
+            }
+        });
+    </script>
 </body>
 
-
 </html>
+
+<!-- スクロールアニメーション、右下にトップとページ位置を兼ね備えたやつ -->
