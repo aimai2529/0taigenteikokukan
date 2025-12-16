@@ -17,7 +17,7 @@
     class="w-screen relative inline-flex flex-col justify-start items-center font-zen-old-mincho font-medium text-gray-950">
 
     <div id="introOverlay"
-        class="fixed inset-0 z-[200] flex flex-col justify-center items-center bg-white opacity-100 transition-opacity duration-700">
+        class="fixed inset-0 z-[200] flex flex-col justify-center items-center bg-white opacity-100 transition-opacity duration-[1200ms] hidden">
         <img src="./image/taigenteikokukan_logo.png"
             class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute" />
     </div>
@@ -27,7 +27,7 @@
 
     <header
         class="opacity-0 pointer-events-none transition-opacity duration-500 w-full h-28 md:px-14 px-4 inset-0 fixed z-50 flex justify-between items-center">
-        <h1>
+        <h1 class="opacity-0 transition-opacity duration-500">
             <a href="./index.html"><img class="w-48 h-auto" src="./image/taigenteikokukan_logo.png" alt="体現帝国館" /></a>
         </h1>
 
@@ -66,16 +66,16 @@
         <a href="#document" class="leading-8">各種資料</a>
     </div>
 
-    <section class="w-full h-screen relative">
+    <section class="w-full h-screen relative mb-40">
         <div id="bgSlideshow" class="absolute inset-0 w-full h-full">
             <img src="image/top1.png"
-                class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-[1500ms]" />
+                class="absolute object-bottom w-full h-full  object-cover opacity-100 transition-opacity duration-[3000ms]" />
             <img src="image/top2.png"
-                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[1500ms]" />
+                class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]" />
             <img src="image/top3.png"
-                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[1500ms]" />
+                class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]" />
             <img src="image/top4.png"
-                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[1500ms]" />
+                class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]" />
         </div>
         <div id="introWhiteOverlay"
             class="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-[1200ms]"
@@ -83,12 +83,13 @@
         </div>
         <img class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute"
             src="./image/taigenteikokukan_logo.png" alt="体現帝国館" />
-        <img src="./image/intro.svg" alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"
-            class="opacity-0 hidden inline w-[420px] max-w-4/5 top-3/4 h-auto left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-center transition-opacity duration-700">
+        <img src="./image/intro2.svg" alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"
+            id="introText"
+            class="opacity-0 hidden inline w-[520px] max-w-4/5 top-3/4 h-auto left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-center transition-opacity duration-[1200ms]">
     </section>
 
     <section id="watch"
-        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-16">
+        class="md:w-4/5 w-9/10 max-w-[900px] py-40 relative flex flex-col justify-start items-center gap-16">
         <h2 class="text-center p-4">
             <img src="./image/watch.svg" alt="観に行く">
         </h2>
@@ -151,7 +152,7 @@
     </section>
 
     <section id="rent"
-        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-16 overflow-hidden">
+        class="md:w-4/5 w-9/10 max-w-[900px] py-40 relative flex flex-col justify-start items-center gap-16 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/rent.svg" alt="借りる">
         </h2>
@@ -237,7 +238,7 @@
     </section>
 
     <section id="use"
-        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        class="md:w-4/5 w-9/10 max-w-[900px] py-40 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/use.svg" alt="上演/展示する">
         </h2>
@@ -320,7 +321,7 @@
     </section>
 
     <section id="about"
-        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-12 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        class="md:w-4/5 w-9/10 max-w-[900px] py-40 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/about.svg" alt="体現帝国館とは">
         </h2>
@@ -352,7 +353,7 @@
     </section>
 
     <section id="document"
-        class="md:w-4/5 w-9/10 max-w-[900px] pt-72 pb-72 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        class="md:w-4/5 w-9/10 max-w-[900px] pt-40 pb-72 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/document.svg" alt="各種資料">
         </h2>
@@ -360,12 +361,13 @@
             <li class="flex items-center gap-2 mb-4">-各種図面 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
             <li class="flex items-center gap-2 mb-4">-設備資料 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
             <li class="flex items-center gap-2 mb-4">-ロゴ類 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
-            <li class="flex items-center gap-2 mb-4">-注意事項 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            <li class="flex items-center gap-2 mb-4">-利用規約 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
         </ul>
     </section>
 
-    <div class="w-full h-30 pointer-events-none bg-gradient-to-b from-transparent to-gray-950"></div>
-    <div class="w-full pt-28 pb-14 bg-gray-950 flex flex-col items-center gap-14 overflow-hidden">
+    <div class="w-full h-80 pointer-events-none bg-[url(./image/footer.webp)] bg-repeat-x bg-contain bg-bottom -mb-1">
+    </div>
+    <footer class="w-full pt-20 pb-14 bg-gray-950 flex flex-col items-center gap-14 overflow-hidden">
         <div class="md:w-4/5 w-9/10 flex flex-col md:flex-row justify-between items-start gap-12 max-w-[1200px]">
             <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
                 <ul class="list-none text-xl leading-8">
@@ -390,7 +392,7 @@
                     <li>各種図面</li>
                     <li>設備資料</li>
                     <li>ロゴ類</li>
-                    <li>注意事項</li>
+                    <li>利用規約</li>
                 </ul>
             </div>
 
@@ -419,83 +421,76 @@
         </div>
         <div class="justify-start text-gray-100 leading-8 tracking-widest">
             ©体現帝国</div>
-    </div>
+    </footer>
     <script>
-        // DOM references
+        // ---- Animation Config (editable) ----
+        const INTRO_BACK_SHOW_DELAY = 1500;     // 背景画像が表示されるまで
+        const INTRO_TEXT_SHOW_DELAY = 5000;     // intro テキスト表示
+        const SLIDESHOW_START_DELAY = INTRO_TEXT_SHOW_DELAY;     // スライドショー開始
+        const SLIDESHOW_INTERVAL = 8000;        // スライド切替間隔
+        const introOverlay = document.getElementById("introOverlay");
+        const header = document.querySelector("header");
+        const introText = document.getElementById('introText');
+
         if (window.scrollY > 20) {
-            // --- ページトップ以外でリロードしたときの初期状態 ---
-            const introOverlay = document.getElementById("introOverlay");
-            const introWhite = document.getElementById("introWhiteOverlay");
-            const header = document.querySelector("header");
-            const introTexts = document.querySelectorAll('img[alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"]');
-
-            // ロゴオーバーレイは出さない
-            introOverlay.style.display = "none";
-
-            // 白フィルターは常に表示
-            introWhite.style.opacity = "1";
-
-            // introテキストを表示
-            introTexts.forEach(el => {
-                el.classList.remove("hidden", "opacity-0");
-            });
-
-            // ヘッダーを最初から表示
-            header.classList.remove("opacity-0", "pointer-events-none");
-
-            // 以降のアニメ演出は全部スキップするため、この後の else 部分を実行しない
+            introText.classList.remove("hidden");
+            introText.classList.remove("opacity-0");
+            document.getElementById("introWhiteOverlay").style.opacity = "1";
         } else {
-            const introOverlay = document.getElementById("introOverlay");
-            const header = document.querySelector("header");
-            const introTexts = document.querySelectorAll('#about section img.hidden, #watch section img.hidden, img[alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"]');
-
-            // Step timings
-            // t=0   → logo only
-            // t=1500→ background visible
-            // t=3000→ fade background image, show intro text, fade in gradient mask
+            introOverlay.classList.remove("hidden");
             setTimeout(() => {
                 introOverlay.style.opacity = "0";        // fade out logo overlay
-            }, 1500);
+            }, INTRO_BACK_SHOW_DELAY);
 
             setTimeout(() => {
                 // Fade in intro text
-                introTexts.forEach(el => {
-                    el.classList.remove("hidden");
-                    setTimeout(() => el.classList.remove("opacity-0"), 50);
-                });
+                introText.classList.remove("hidden");
+                setTimeout(() => introText.classList.remove("opacity-0"), 50);
 
                 // Fade in semi-transparent white overlay instead of brightness
                 setTimeout(() => {
                     document.getElementById("introWhiteOverlay").style.opacity = "1";
                 }, 50);
-            }, 3000);
+            }, INTRO_TEXT_SHOW_DELAY);
 
             setTimeout(() => {
                 introOverlay.style.display = "none";     // remove overlay
-            }, 2300);
-
-            // Show header once user scrolls a little
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > 20) {
-                    header.classList.remove("opacity-0", "pointer-events-none");
-                }
-            });
-
-            // Slideshow logic
-            const slides = document.querySelectorAll('#bgSlideshow img');
-            let currentSlide = 0;
-
-            function changeSlide() {
-                slides[currentSlide].style.opacity = "0";
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].style.opacity = "1";
-            }
-
-            // Start slideshow after white filter appears
-            setTimeout(() => {
-                setInterval(changeSlide, 6000);
-            }, 3000);
+            }, INTRO_BACK_SHOW_DELAY + 800);
         }
+
+
+        // Show header once user scrolls a little
+        window.addEventListener("scroll", () => {
+            const headerLogo = document.querySelector("header h1");
+
+            if (window.scrollY > 20) {
+                header.classList.remove("opacity-0", "pointer-events-none");
+
+                // ファーストビューを完全に抜けたらロゴ出現
+                if (window.scrollY > window.innerHeight * 0.85) {
+                    headerLogo.classList.remove("opacity-0", "pointer-events-none");
+                } else {
+                    // ★ ファーストビューに戻ってきたらロゴを消す
+                    headerLogo.classList.add("opacity-0", "pointer-events-none");
+                }
+            }
+        });
+
+        // Slideshow logic
+        const slides = document.querySelectorAll('#bgSlideshow img');
+        let currentSlide = 0;
+
+        function changeSlide() {
+            slides[currentSlide].style.opacity = "0";
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.opacity = "1";
+        }
+
+        // Start slideshow after white filter appears
+        setTimeout(() => {
+            setInterval(changeSlide, SLIDESHOW_INTERVAL);
+        }, SLIDESHOW_START_DELAY);
+
     </script>
     <!-- メッセージカードトグル -->
     <script>
