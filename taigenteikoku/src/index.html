@@ -9,6 +9,44 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* header active link (desktop only) */
+        @media (min-width: 768px) {
+            header nav a {
+                position: relative;
+            }
+
+            header nav a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                width: 100%;
+                height: 1px;
+                background: currentColor;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s ease, opacity 0.3s ease;
+            }
+
+            header nav a.is-active::after {
+                transform: scaleX(1);
+            }
+
+        }
+
+        /* progress ring color switch */
+        #scrollIndicator.is-footer circle {
+            stroke: rgba(255, 255, 255, 0.4);
+        }
+
+        #scrollIndicator.is-footer {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        #scrollIndicator {
+            transition: 0.4s ease;
+        }
     </style>
     <title>体現帝国館</title>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
@@ -26,6 +64,18 @@
 
     <video autoplay muted loop src="./image/background6.mp4"
         class="fixed z-[-99] w-full h-full inset-0 object-cover"></video>
+
+    <!-- Mobile scroll indicator / progress ring -->
+    <button id="scrollIndicator"
+        class="md:hidden fixed bottom-6 right-6 z-10 w-12 h-12 flex items-center justify-center transition-opacity duration-300 opacity-0">
+        <svg class="absolute inset-0 w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
+            <!-- progress ring -->
+            <circle id="progressRing" cx="50" cy="50" r="44" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="4"
+                stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276"
+                class="transition-[stroke-dashoffset] duration-200 ease-out" />
+        </svg>
+        <span class="relative z-10 text-lg leading-none opacity-50">↑</span>
+    </button>
 
     <header
         class="opacity-0 pointer-events-none transition-opacity duration-500 w-full h-28 md:px-14 px-4 inset-0 fixed z-50 flex justify-between items-center">
@@ -60,7 +110,7 @@
     </header>
 
     <div id="mobileMenu"
-        class="md:hidden hidden flex flex-col items-start justify-center gap-10 w-full h-screen bg-white/80 backdrop-blur-sm px-10 tracking-widest text-xl fixed top-0 left-0 z-40 transition-opacity duration-300 opacity-0">
+        class="md:hidden hidden flex flex-col items-start justify-center gap-10 w-full h-full bg-white/80 backdrop-blur-sm px-10 tracking-widest text-xl fixed top-0 left-0 z-40 transition-opacity duration-300 opacity-0">
         <a href="#watch" class="leading-8">観に行く</a>
         <a href="#rent" class="leading-8">借りる</a>
         <a href="#use" class="leading-8">上演／展示する</a>
@@ -91,7 +141,7 @@
     </section>
 
     <section id="watch"
-        class="md:w-4/5 w-9/10 max-w-[900px] pt-40 pb-20 relative flex flex-col justify-start items-center gap-16 scatter-zone">
+        class="md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-16 scatter-zone">
         <h2 class="text-center p-4">
             <img src="./image/watch.svg" alt="観に行く">
         </h2>
@@ -119,8 +169,11 @@
                         <a href="https://maps.app.goo.gl/kFeDARX9hPKHB1pE9" target="_blank"
                             class="flex items-center gap-2">
                             <div
-                                class="p-[5px] pr-[14px] relative after:absolute after:left-0 after:bg-[url(image/map_arraw.svg)] after:bg-no-repeat after:bg-contain after:w-full after:h-full arraw">
+                                class="arraw group relative p-[5px] pr-[14px] transition-transform duration-300 hover:translate-x-2">
                                 <p class="leading-8 tracking-widest">Google Mapで開く</p>
+                                <span
+                                    class="absolute inset-0 bg-[url(image/map_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 delay-100 group-hover:translate-x-2">
+                                </span>
                             </div>
                         </a>
                     </div>
@@ -157,7 +210,7 @@
     </section>
 
     <section id="rent"
-        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-40 pb-20 relative flex flex-col justify-start items-center gap-16 overflow-hidden">
+        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-16 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/rent.svg" alt="借りる">
         </h2>
@@ -229,9 +282,12 @@
                 <div class="md:mx-[auto] ml-[auto]">
                     <a href="#" target="_blank">
                         <div
-                            class="p-[5px] pr-[14px] relative after:absolute after:left-0 after:bg-[url(image/rent_arraw.svg)] after:bg-no-repeat after:bg-contain after:w-full after:h-full arraw">
+                            class="arraw group relative p-[5px] pr-[14px] transition-transform duration-300 hover:translate-x-2">
                             <p class="justify-start leading-8 tracking-widest">
                                 レンタルを申し込む</p>
+                            <span
+                                class="absolute inset-0 bg-[url(image/rent_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 delay-100 group-hover:translate-x-2">
+                            </span>
                         </div>
                     </a>
                 </div>
@@ -243,7 +299,7 @@
     </section>
 
     <section id="use"
-        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-40 pb-20 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/use.svg" alt="上演/展示する">
         </h2>
@@ -283,7 +339,7 @@
                     </div>
                 </dl>
             </div>
-            <section class="w-[694px] flex flex-col justify-start items-start gap-7 fade-right">
+            <section class="w-full flex flex-col justify-start items-start gap-7 fade-right">
                 <h3 class="text-center justify-start text-xl font-bold tracking-widest">
                     上演を検討する県外の方々へ</h3>
                 <dl class="flex flex-col justify-start items-center gap-2.5">
@@ -296,7 +352,7 @@
                     </div>
                 </dl>
             </section>
-            <section class="w-[694px] flex flex-col justify-start items-start gap-7 fade-right">
+            <section class="w-full flex flex-col justify-start items-start gap-7 fade-right">
                 <h3 class="text-center justify-start text-xl font-bold tracking-widest">
                     観客の皆さんへ</h3>
                 <div class="justify-start leading-8 tracking-widest">
@@ -312,9 +368,12 @@
                 <div class="md:mx-[auto] ml-[auto]">
                     <a href="#" target="_blank">
                         <div
-                            class="p-[5px] pr-[14px] relative after:absolute after:left-0 after:bg-[url(image/use_arraw.svg)] after:bg-no-repeat after:bg-contain after:w-full after:h-full arraw">
+                            class="arraw group relative p-[5px] pr-[14px] transition-transform duration-300 hover:translate-x-2">
                             <p class="justify-start leading-8 tracking-widest">
                                 上演・展示利用を申し込む</p>
+                            <span
+                                class="absolute inset-0 bg-[url(image/use_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 delay-100 group-hover:translate-x-2">
+                            </span>
                         </div>
                     </a>
                 </div>
@@ -326,7 +385,7 @@
     </section>
 
     <section id="about"
-        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-40 pb-20 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/about.svg" alt="体現帝国館とは">
         </h2>
@@ -337,10 +396,10 @@
         </div>
         <div class="w-full flex flex-col justify-center items-center">
             <div id="msgCard"
-                class="self-stretch p-7 bg-white/60 shadow-[4px_4px_8px_0px_rgba(0,0,0,0.4)] outline outline-2 outline-offset-[-2px] outline-gray-950 flex flex-col gap-4 overflow-hidden transition-all duration-300 w-[320px] mx-auto">
+                class="self-stretch p-7 bg-white/40 shadow-[4px_4px_8px_0px_rgba(0,0,0,0.4)] outline outline-2 outline-offset-[-2px] outline-gray-950 flex flex-col gap-4 overflow-hidden transition-all duration-300 w-[340px] mx-auto">
 
                 <button id="msgToggle"
-                    class="w-full flex justify-between items-center text-left text-xl font-bold tracking-widest select-none">
+                    class="w-full flex justify-between items-center text-left text-xl font-bold tracking-widest select-none cursor-pointer">
                     <span>主宰からのメッセージ</span>
                     <span id="msgIcon" class="transition-transform duration-300">∨</span>
                 </button>
@@ -358,15 +417,23 @@
     </section>
 
     <section id="document"
-        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-40 pb-36 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
+        class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-36 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
             <img src="./image/document.svg" alt="各種資料">
         </h2>
         <ul class='leading-8 tracking-widest list-none'>
-            <li class="flex items-center gap-2 mb-4">-各種図面 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
-            <li class="flex items-center gap-2 mb-4">-設備資料 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
-            <li class="flex items-center gap-2 mb-4">-ロゴ類 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
-            <li class="flex items-center gap-2 mb-4">-利用規約 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            <a href="#">
+                <li class="flex items-center gap-2 mb-4">-各種図面 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            </a>
+            <a href="#">
+                <li class="flex items-center gap-2 mb-4">-設備資料 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            </a>
+            <a href="#">
+                <li class="flex items-center gap-2 mb-4">-ロゴ類 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            </a>
+            <a href="#">
+                <li class="flex items-center gap-2 mb-4">-利用規約 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+            </a>
         </ul>
     </section>
 
@@ -395,10 +462,18 @@
                 <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
                     <h4 class="underline text-xl">各種資料</h4>
                     <ul class='pl-6 leading-8 tracking-widest list-["-"]'>
-                        <li>各種図面</li>
-                        <li>設備資料</li>
-                        <li>ロゴ類</li>
-                        <li>利用規約</li>
+                        <a href="#">
+                            <li>各種図面</li>
+                        </a>
+                        <a href="#">
+                            <li>設備資料</li>
+                        </a>
+                        <a href="#">
+                            <li>ロゴ類</li>
+                        </a>
+                        <a href="#">
+                            <li>利用規約</li>
+                        </a>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
@@ -560,7 +635,7 @@
 
                 // 横を最後に戻す
                 setTimeout(() => {
-                    msgCard.style.width = "320px";
+                    msgCard.style.width = "340px";
                 }, 350);
 
                 msgIcon.style.transform = "rotate(0deg)";
@@ -603,6 +678,7 @@
 
             if (menuOpen) {
                 // メニュー表示
+                indicator.classList.add("opacity-0");
                 menu.classList.remove("hidden");
                 setTimeout(() => {
                     menu.classList.remove("opacity-0");
@@ -615,6 +691,7 @@
 
             } else {
                 // メニュー非表示
+                indicator.classList.remove("opacity-0");
                 menu.classList.add("opacity-0");
                 setTimeout(() => {
                     menu.classList.add("hidden");
@@ -631,6 +708,50 @@
     <!-- GSAP -->
     <script>
         gsap.registerPlugin(ScrollTrigger);
+
+        // ---------------------------------
+        // Anchor scroll: keep native smooth
+        // ---------------------------------
+        // NOTE:
+        // normalizeScroll はアンカー遷移（scroll-behavior: smooth）を打ち消すため、
+        // 「ユーザーのホイール操作時のみ」効かせる
+        let isAnchorScrolling = false;
+
+        document.querySelectorAll('header nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                isAnchorScrolling = true;
+
+                const id = link.getAttribute('href');
+                const target = document.querySelector(id);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // スクロール完了後に normalizeScroll を戻す
+                setTimeout(() => {
+                    isAnchorScrolling = false;
+                    ScrollTrigger.normalizeScroll(true);
+                }, 1000);
+            });
+        });
+
+        // ------------------------------
+        // Scroll speed control (soft limit)
+        // ------------------------------
+        // ホイール・トラックパッドのスクロール速度をなだらかにする
+        ScrollTrigger.normalizeScroll({
+            allowNestedScroll: true,
+            lockAxis: false,
+            momentum: 0.15,
+            onEnable() {
+                if (isAnchorScrolling) this.disable();
+            }
+        });
 
         const fadeSettings = {
             duration: 1,
@@ -683,46 +804,119 @@
         // スクロール速度に応じて散り量と消失スピードが変わる演出
         // 各テキスト要素単位で、ヘッダーに触れる直前にのみ散らすための設定
         const HEADER_HEIGHT = 112;            // ヘッダー実寸
-        const ENTER_PADDING = 32;             // 下方向スクロール時：少し下で発火
-        const LEAVE_PADDING = -52;            // 上方向スクロール時：かなり上で戻す
+        const ENTER_PADDING = 24;             // 下方向スクロール時：少し下で発火
+        const LEAVE_PADDING = -18;            // 上方向スクロール時：かなり上で戻す
 
         gsap.utils.toArray(".scatter-zone").forEach(section => {
-            const items = section.querySelectorAll("p, li, dt, dd, h3,img,h2,th,td,.arraw,#msgCard");
+            const items = section.querySelectorAll(
+                "p, li, dt, dd, h3, img, h2, th, td, #msgCard"
+            );
             items.forEach(item => {
                 gsap.set(item, { willChange: "transform, opacity" });
+
+                const baseScatter = {
+                    x: gsap.utils.random(-18, 18),
+                    y: gsap.utils.random(-12, 12),
+                    r: gsap.utils.random(-3, 3)
+                };
 
                 ScrollTrigger.create({
                     // markers: true,
                     trigger: item,
                     start: () => `top ${HEADER_HEIGHT + ENTER_PADDING}px`,
                     end: () => `top ${HEADER_HEIGHT + LEAVE_PADDING}px`,
+                    scrub: true,
                     onUpdate: self => {
-                        item._scrollVelocity = Math.abs(self.getVelocity());
-                    },
-                    onEnter: () => {
-                        const v = Math.min(item._scrollVelocity || 0, 2500); // 上限
-                        const power = gsap.utils.mapRange(0, 3000, 0.3, 1.2, v);
+                        const v = Math.min(Math.abs(self.getVelocity()), 2500);
+                        const velocityPower = gsap.utils.mapRange(0, 2500, 0.4, 1.2, v);
+                        const p = gsap.utils.clamp(0, 1, self.progress);
+                        const eased = gsap.parseEase("power2.in")(p);
 
                         gsap.to(item, {
-                            x: gsap.utils.random(-18, 18) * power,
-                            y: gsap.utils.random(-12, 12) * power,
-                            rotation: gsap.utils.random(-3, 3) * power,
-                            opacity: 0,
-                            duration: gsap.utils.mapRange(0, 2000, 0.3, 0, v),
-                            ease: "power3.in"
-                        });
-                    },
-                    onLeaveBack: () => {
-                        gsap.to(item, {
-                            x: 0,
-                            y: 0,
-                            rotation: 0,
-                            opacity: 1,
-                            duration: 0.3,
-                            ease: "power3.out"
+                            x: baseScatter.x * p * velocityPower,
+                            y: baseScatter.y * p * velocityPower,
+                            rotation: baseScatter.r * p * velocityPower,
+                            opacity: 1 - eased,
+                            overwrite: true,
+                            ease: "power2.out"
                         });
                     }
                 });
+            });
+        });
+
+        // ---------------------------------
+        // Header nav active underline (desktop)
+        // ---------------------------------
+        const navLinks = document.querySelectorAll('header nav a');
+
+        navLinks.forEach(link => {
+            const target = document.querySelector(link.getAttribute('href'));
+            if (!target) return;
+
+            ScrollTrigger.create({
+                trigger: target,
+                start: "top center",
+                end: "bottom center",
+                onEnter: () => setActive(link),
+                onEnterBack: () => setActive(link),
+                onLeave: () => link.classList.remove("is-active"),
+                onLeaveBack: () => link.classList.remove("is-active")
+            });
+        });
+
+        function setActive(activeLink) {
+            navLinks.forEach(l => l.classList.remove("is-active"));
+            activeLink.classList.add("is-active");
+        }
+
+        // ---------------------------------
+        // Mobile scroll indicator (progress ring + back to top)
+        // ---------------------------------
+        const indicator = document.getElementById("scrollIndicator");
+        const ring = document.getElementById("progressRing");
+        const footer = document.querySelector("footer");
+        const RING_LENGTH = 276;
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+
+            // 表示制御
+            if (scrollTop > window.innerHeight * 0.4) {
+                indicator.classList.remove("opacity-0");
+            } else {
+                indicator.classList.add("opacity-0");
+            }
+
+            // 進捗リング更新
+            const offset = RING_LENGTH * (1 - progress);
+            ring.style.strokeDashoffset = offset;
+
+            // フッターに入ったらリング色を切り替える
+            if (footer) {
+                const footerTop = footer.getBoundingClientRect().top;
+                const triggerPoint = window.innerHeight * 0.9;
+
+                if (footerTop < triggerPoint + 100) {
+                    indicator.classList.add("is-footer");
+                } else {
+                    indicator.classList.remove("is-footer");
+                }
+                // --- カーソルもフッターで色変化 ---
+                if (footerTop < triggerPoint + 100) {
+                    cursor.classList.add("is-footer");
+                } else {
+                    cursor.classList.remove("is-footer");
+                }
+            }
+        });
+
+        indicator?.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
             });
         });
     </script>
