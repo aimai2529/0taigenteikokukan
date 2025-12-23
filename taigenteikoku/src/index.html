@@ -168,11 +168,10 @@
                     <div class="ml-auto">
                         <a href="https://maps.app.goo.gl/kFeDARX9hPKHB1pE9" target="_blank"
                             class="flex items-center gap-2">
-                            <div
-                                class="arraw group relative p-[5px] pr-[14px] transition-transform duration-300 hover:translate-x-2">
+                            <div class="arraw group relative p-[5px] pr-[14px]">
                                 <p class="leading-8 tracking-widest">Google Mapで開く</p>
                                 <span
-                                    class="absolute inset-0 bg-[url(image/map_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 delay-100 group-hover:translate-x-2">
+                                    class="absolute inset-0 bg-[url(image/map_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 group-hover:translate-x-2">
                                 </span>
                             </div>
                         </a>
@@ -281,12 +280,11 @@
                     利用を希望される方は、下記フォームまでご連絡ください。</p>
                 <div class="md:mx-[auto] ml-[auto]">
                     <a href="#" target="_blank">
-                        <div
-                            class="arraw group relative p-[5px] pr-[14px] transition-transform duration-300 hover:translate-x-2">
+                        <div class="arraw group relative p-[5px] pr-[14px]">
                             <p class="justify-start leading-8 tracking-widest">
                                 レンタルを申し込む</p>
                             <span
-                                class="absolute inset-0 bg-[url(image/rent_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 delay-100 group-hover:translate-x-2">
+                                class="absolute inset-0 bg-[url(image/rent_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 group-hover:translate-x-2">
                             </span>
                         </div>
                     </a>
@@ -367,12 +365,11 @@
                     体現帝国館での上演や展示を希望される方は、以下のフォームよりお申し込みください。 </p>
                 <div class="md:mx-[auto] ml-[auto]">
                     <a href="#" target="_blank">
-                        <div
-                            class="arraw group relative p-[5px] pr-[14px] transition-transform duration-300 hover:translate-x-2">
+                        <div class="arraw group relative p-[5px] pr-[14px]">
                             <p class="justify-start leading-8 tracking-widest">
                                 上演・展示利用を申し込む</p>
                             <span
-                                class="absolute inset-0 bg-[url(image/use_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 delay-100 group-hover:translate-x-2">
+                                class="absolute inset-0 bg-[url(image/use_arraw.svg)] bg-no-repeat bg-contain bg-bottom transition-transform duration-300 group-hover:translate-x-2">
                             </span>
                         </div>
                     </a>
@@ -809,7 +806,7 @@
 
         gsap.utils.toArray(".scatter-zone").forEach(section => {
             const items = section.querySelectorAll(
-                "p, li, dt, dd, h3, img, h2, th, td, #msgCard"
+                "p, li, dt, dd, h3, img, h2, th, td, #msgCard,.arraw"
             );
             items.forEach(item => {
                 gsap.set(item, { willChange: "transform, opacity" });
@@ -903,12 +900,6 @@
                     indicator.classList.add("is-footer");
                 } else {
                     indicator.classList.remove("is-footer");
-                }
-                // --- カーソルもフッターで色変化 ---
-                if (footerTop < triggerPoint + 100) {
-                    cursor.classList.add("is-footer");
-                } else {
-                    cursor.classList.remove("is-footer");
                 }
             }
         });

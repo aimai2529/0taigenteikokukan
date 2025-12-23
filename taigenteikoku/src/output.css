@@ -205,9 +205,6 @@
   .right-6 {
     right: calc(var(--spacing) * 6);
   }
-  .bottom-0 {
-    bottom: calc(var(--spacing) * 0);
-  }
   .bottom-6 {
     bottom: calc(var(--spacing) * 6);
   }
@@ -234,9 +231,6 @@
   }
   .z-\[200\] {
     z-index: 200;
-  }
-  .z-\[9999\] {
-    z-index: 9999;
   }
   .mx-auto {
     margin-inline: auto;
@@ -374,12 +368,6 @@
     --tw-translate-y: -4px;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .scale-150 {
-    --tw-scale-x: 150%;
-    --tw-scale-y: 150%;
-    --tw-scale-z: 150%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
-  }
   .rotate-\[-90deg\] {
     rotate: -90deg;
   }
@@ -475,12 +463,6 @@
   .border-gray-950 {
     border-color: var(--color-gray-950);
   }
-  .bg-black\/30 {
-    background-color: color-mix(in srgb, #000 30%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
-    }
-  }
   .bg-gray-950 {
     background-color: var(--color-gray-950);
   }
@@ -559,23 +541,11 @@
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
   }
-  .pt-40 {
-    padding-top: calc(var(--spacing) * 40);
-  }
   .pt-42 {
     padding-top: calc(var(--spacing) * 42);
   }
-  .pr-2 {
-    padding-right: calc(var(--spacing) * 2);
-  }
   .pr-\[14px\] {
     padding-right: 14px;
-  }
-  .pr-\[16px\] {
-    padding-right: 16px;
-  }
-  .pr-\[24px\] {
-    padding-right: 24px;
   }
   .pb-14 {
     padding-bottom: calc(var(--spacing) * 14);
@@ -708,18 +678,6 @@
   .delay-100 {
     transition-delay: 100ms;
   }
-  .duration-20 {
-    --tw-duration: 20ms;
-    transition-duration: 20ms;
-  }
-  .duration-50 {
-    --tw-duration: 50ms;
-    transition-duration: 50ms;
-  }
-  .duration-100 {
-    --tw-duration: 100ms;
-    transition-duration: 100ms;
-  }
   .duration-200 {
     --tw-duration: 200ms;
     transition-duration: 200ms;
@@ -740,10 +698,6 @@
     --tw-duration: 3000ms;
     transition-duration: 3000ms;
   }
-  .ease-\[cubic-bezier\(\.2\,\.8\,\.2\,1\)\] {
-    --tw-ease: cubic-bezier(.2,.8,.2,1);
-    transition-timing-function: cubic-bezier(.2,.8,.2,1);
-  }
   .ease-out {
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
@@ -758,60 +712,6 @@
         --tw-translate-x: calc(var(--spacing) * 2);
         translate: var(--tw-translate-x) var(--tw-translate-y);
       }
-    }
-  }
-  .after\:absolute {
-    &::after {
-      content: var(--tw-content);
-      position: absolute;
-    }
-  }
-  .after\:left-0 {
-    &::after {
-      content: var(--tw-content);
-      left: calc(var(--spacing) * 0);
-    }
-  }
-  .after\:h-full {
-    &::after {
-      content: var(--tw-content);
-      height: 100%;
-    }
-  }
-  .after\:w-full {
-    &::after {
-      content: var(--tw-content);
-      width: 100%;
-    }
-  }
-  .after\:bg-\[url\(image\/map_arraw\.svg\)\] {
-    &::after {
-      content: var(--tw-content);
-      background-image: url(image/map_arraw.svg);
-    }
-  }
-  .after\:bg-\[url\(image\/rent_arraw\.svg\)\] {
-    &::after {
-      content: var(--tw-content);
-      background-image: url(image/rent_arraw.svg);
-    }
-  }
-  .after\:bg-\[url\(image\/use_arraw\.svg\)\] {
-    &::after {
-      content: var(--tw-content);
-      background-image: url(image/use_arraw.svg);
-    }
-  }
-  .after\:bg-contain {
-    &::after {
-      content: var(--tw-content);
-      background-size: contain;
-    }
-  }
-  .after\:bg-no-repeat {
-    &::after {
-      content: var(--tw-content);
-      background-repeat: no-repeat;
     }
   }
   .hover\:translate-x-2 {
@@ -922,21 +822,6 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -1142,11 +1027,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-content {
-  syntax: "*";
-  initial-value: "";
-  inherits: false;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -1155,9 +1035,6 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -1206,7 +1083,6 @@
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
       --tw-ease: initial;
-      --tw-content: "";
     }
   }
 }
