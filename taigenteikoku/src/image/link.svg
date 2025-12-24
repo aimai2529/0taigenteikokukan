@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_外部リンク" data-name="外部リンク" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6e6e6;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M190,140v50H50V50h50v-30h-60c-11.05,0-20,8.95-20,20v160c0,11.05,8.95,20,20,20h160c11.05,0,20-8.95,20-20v-60h-30Z"/>
+  <path class="cls-1" d="M200,20h-80v20h65.86l-67.93,67.93,14.14,14.14,67.93-67.93v65.86h20V40c0-11.05-8.95-20-20-20Z"/>
+</svg>
