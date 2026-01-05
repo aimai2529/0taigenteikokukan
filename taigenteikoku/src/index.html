@@ -68,7 +68,8 @@
             class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute" />
     </div>
 
-    <video id="bgVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" src="./image/background6.webm"
+    <video id="bgVideo" autoplay muted loop playsinline webkit-playsinline preload="metadata"
+        poster="./image/bg_poster.jpg" src="./image/background6.webm"
         class="fixed z-[-99] w-full h-full inset-0 object-cover">
     </video>
 
@@ -127,12 +128,28 @@
 
     <section class="w-full h-screen relative mb-40">
         <div id="bgSlideshow" class="absolute inset-0 w-full h-full">
-            <img src="image/top1.png"
-                class="absolute object-bottom w-full h-full  object-cover opacity-100 transition-opacity duration-[3000ms]" />
-            <img src="image/top2.png"
-                class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]" />
-            <img src="image/top3.png"
-                class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]" />
+            <picture>
+                <source srcset="image/top1.webp" type="image/webp"
+                    class="absolute object-bottom w-full h-full  object-cover opacity-100 transition-opacity duration-[3000ms]">
+                <img src="image/top1.png"
+                    class="absolute object-bottom w-full h-full  object-cover opacity-100 transition-opacity duration-[3000ms]" />
+            </picture>
+            <picture>
+                <source srcset="image/top2.webp" type="image/webp"
+                    class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+                    loading="lazy">
+                <img src="image/top2.png"
+                    class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+                    loading="lazy" />
+            </picture>
+            <picture>
+                <source srcset="image/top3.webp" type="image/webp"
+                    class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+                    loading="lazy">
+                <img src="image/top3.png"
+                    class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+                    loading="lazy" />
+            </picture>
         </div>
         <div id="introWhiteOverlay"
             class="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-[1200ms]"
@@ -148,20 +165,20 @@
     <section id="watch"
         class="md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-16 scatter-zone">
         <h2 class="text-center p-4">
-            <img src="./image/watch.svg" alt="観に行く">
+            <img src="./image/watch.svg" alt="観に行く" loading="lazy">
         </h2>
         <div class="w-full flex flex-col md:flex-row justify-between items-start gap-24 md:gap-10 fade-right">
             <div class="flex flex-col items-center md:items-start gap-2
                 w-full md:min-w-[350px] max-w-[360px] mx-auto">
-                <img src="./image/far_1.svg" alt="">
-                <img src="./image/far_2.svg" alt="">
-                <img src="./image/far_3.svg" alt="">
-                <img src="./image/far_4.svg" alt="">
-                <img src="./image/far_5.svg" alt="">
-                <img src="./image/far_6.svg" alt="">
-                <img src="./image/far_7.svg" alt="">
-                <img src="./image/far_8.svg" alt="">
-                <img src="./image/far_9.svg" alt="">
+                <img src="./image/far_1.svg" alt="" loading="lazy">
+                <img src="./image/far_2.svg" alt="" loading="lazy">
+                <img src="./image/far_3.svg" alt="" loading="lazy">
+                <img src="./image/far_4.svg" alt="" loading="lazy">
+                <img src="./image/far_5.svg" alt="" loading="lazy">
+                <img src="./image/far_6.svg" alt="" loading="lazy">
+                <img src="./image/far_7.svg" alt="" loading="lazy">
+                <img src="./image/far_8.svg" alt="" loading="lazy">
+                <img src="./image/far_9.svg" alt="" loading="lazy">
             </div>
 
             <div class="w-full md:w-1/2 flex flex-col gap-16">
@@ -216,7 +233,7 @@
     <section id="rent"
         class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-16 overflow-hidden">
         <h2 class="text-center p-4">
-            <img src="./image/rent.svg" alt="借りる">
+            <img src="./image/rent.svg" alt="借りる" loading="lazy">
         </h2>
         <div class="flex flex-col justify-start items-center gap-16 fade-right">
             <p class="text-center justify-start leading-8 tracking-widest">
@@ -304,7 +321,7 @@
     <section id="use"
         class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
-            <img src="./image/use.svg" alt="上演/展示する">
+            <img src="./image/use.svg" alt="上演/展示する" loading="lazy">
         </h2>
         <div class="w-full max-w-[800px] flex flex-col justify-start gap-14 fade-right">
             <div class="self-stretch justify-start leading-8 tracking-widest">
@@ -389,7 +406,7 @@
     <section id="about"
         class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-20 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
-            <img src="./image/about.svg" alt="体現帝国館とは">
+            <img src="./image/about.svg" alt="体現帝国館とは" loading="lazy">
         </h2>
         <div class="w-full flex flex-col justify-start items-center gap-2.5">
             <p class="self-stretch text-justify justify-start leading-8 tracking-widest fade-right">
@@ -421,20 +438,24 @@
     <section id="document"
         class="scatter-zone md:w-4/5 w-9/10 max-w-[900px] pt-42 pb-36 relative flex flex-col justify-start items-center gap-14 overflow-hidden">
         <h2 class="text-center p-4">
-            <img src="./image/document.svg" alt="各種資料">
+            <img src="./image/document.svg" alt="各種資料" loading="lazy">
         </h2>
         <ul class='leading-8 tracking-widest list-none'>
             <a href="#">
-                <li class="flex items-center gap-2 mb-4">-各種図面 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+                <li class="flex items-center gap-2 mb-4">-各種図面 <img class="w-4 h-4" src="./image/pdf.webp"
+                        loading="lazy" /></li>
             </a>
             <a href="#">
-                <li class="flex items-center gap-2 mb-4">-設備資料 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+                <li class="flex items-center gap-2 mb-4">-設備資料 <img class="w-4 h-4" src="./image/pdf.webp"
+                        loading="lazy" /></li>
             </a>
             <a href="#">
-                <li class="flex items-center gap-2 mb-4">-ロゴ類 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+                <li class="flex items-center gap-2 mb-4">-ロゴ類 <img class="w-4 h-4" src="./image/pdf.webp"
+                        loading="lazy" /></li>
             </a>
             <a href="#">
-                <li class="flex items-center gap-2 mb-4">-利用規約 <img class="w-4 h-4" src="./image/pdf.webp" /></li>
+                <li class="flex items-center gap-2 mb-4">-利用規約 <img class="w-4 h-4" src="./image/pdf.webp"
+                        loading="lazy" /></li>
             </a>
         </ul>
     </section>
@@ -479,27 +500,27 @@
                     </ul>
                 </div>
                 <div class="flex flex-col gap-3 text-gray-100 tracking-widest w-full md:w-auto">
-                    <img class="w-40 h-auto" src="./image/taigenteikokukan_logo.png" alt="体現帝国館" />
+                    <img class="w-40 h-auto" src="./image/taigenteikokukan_logo.png" alt="体現帝国館" loading="lazy" />
                     <p>代表　渡部剛己</p>
                     <p>Mail : taigenteikoku@gmail.com</p>
                     <p>Tel : 080-6944-6915</p>
                     <p>〒457-0862<br>愛知県名古屋市南区内田橋1丁目6-10 豊栄ビル 1階</p>
                     <a href="https://taigenteikoku.com/" target="_blank">
                         <p class="underline flex flex-row gap-1 items-center">体現帝国　劇団サイト<img src="./image/link.svg"
-                                alt="" class="w-4 h-4"></p>
+                                alt="" class="w-4 h-4" loading="lazy"></p>
                     </a>
                     <div class="inline-flex items-center gap-4 mt-2">
                         <a href="https://x.com/taigenteikoku" target="_blank">
-                            <img class="w-6" src="./image/logo.svg" />
+                            <img class="w-6" src="./image/logo.svg" loading="lazy" />
                         </a>
                         <a href="https://www.instagram.com/taigenteikoku/" target="_blank">
-                            <img class="w-6" src="./image/Instagram_Glyph_White.svg" />
+                            <img class="w-6" src="./image/Instagram_Glyph_White.svg" loading="lazy" />
                         </a>
                         <a href="https://www.facebook.com/taigenteikoku/" target="_blank">
-                            <img class="w-6" src="./image/Facebook_Logo_Secondary.png" />
+                            <img class="w-6" src="./image/Facebook_Logo_Secondary.png" loading="lazy" />
                         </a>
                         <a href="https://www.youtube.com/channel/UCrYWJTqdJ6MsD54DqECi3sA" target="_blank">
-                            <img class="w-6" src="./image/yt_icon_mono_dark.png" />
+                            <img class="w-6" src="./image/yt_icon_mono_dark.png" loading="lazy" />
                         </a>
                     </div>
                 </div>
