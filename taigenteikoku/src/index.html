@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
     <link rel="icon" href="./favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" fetchpriority="high"
+        href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&display=swap"
+        media="print" onload='this.media="all"' />
 
     <style>
         html {
@@ -795,15 +801,17 @@
         // ------------------------------
         // Scroll speed control (soft limit)
         // ------------------------------
-        // ホイール・トラックパッドのスクロール速度をなだらかにする
-        ScrollTrigger.normalizeScroll({
-            allowNestedScroll: true,
-            lockAxis: false,
-            momentum: 0.15,
-            onEnable() {
-                if (isAnchorScrolling) this.disable();
-            }
-        });
+        // ホイール・トラックパッドのスクロール速度をなだらかにする（※スマホは無効）
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            ScrollTrigger.normalizeScroll({
+                allowNestedScroll: true,
+                lockAxis: false,
+                momentum: 0.15,
+                onEnable() {
+                    if (isAnchorScrolling) this.disable();
+                }
+            });
+        }
 
         const fadeSettings = {
             duration: 1,
