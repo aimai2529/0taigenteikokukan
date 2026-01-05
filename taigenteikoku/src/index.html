@@ -68,8 +68,9 @@
             class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute" />
     </div>
 
-    <video autoplay muted loop src="./image/background6.webm"
-        class="fixed z-[-99] w-full h-full inset-0 object-cover"></video>
+    <video id="bgVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" src="./image/background6.webm"
+        class="fixed z-[-99] w-full h-full inset-0 object-cover">
+    </video>
 
     <!-- Mobile scroll indicator / progress ring -->
     <button id="scrollIndicator"
@@ -576,6 +577,31 @@
         setTimeout(() => {
             setInterval(changeSlide, SLIDESHOW_INTERVAL);
         }, SLIDESHOW_START_DELAY);
+
+        // --- ensure background video auto-plays on Safari / iOS ---
+        const bgVideo = document.getElementById("bgVideo");
+        if (bgVideo) {
+            const tryPlay = () => {
+                const p = bgVideo.play();
+                if (p && typeof p.then === "function") {
+                    p.catch(() => {
+                        // If Safari blocks it, retry once user scrolls or taps
+                        const resume = () => {
+                            bgVideo.play().finally(() => {
+                                window.removeEventListener("scroll", resume, { passive: true });
+                                window.removeEventListener("touchstart", resume);
+                            });
+                        };
+                        window.addEventListener("scroll", resume, { passive: true });
+                        window.addEventListener("touchstart", resume);
+                    });
+                }
+            };
+            // Attempt immediately
+            tryPlay();
+            // Attempt again after a short delay (sometimes helps on iOS)
+            setTimeout(tryPlay, 400);
+        }
     </script>
 
     <!-- メッセージカードトグル -->
