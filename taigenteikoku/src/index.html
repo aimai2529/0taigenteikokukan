@@ -22,6 +22,11 @@
             background-color: #F5F4F9;
         }
 
+        body::selection {
+            background-color: rgba(94, 94, 105, 0.593);
+            color: #F5F4F9;
+        }
+
         /* header active link (desktop only) */
         @media (min-width: 768px) {
             header nav a {
@@ -92,7 +97,7 @@
     <div id="introOverlay"
         class="fixed inset-0 z-[200] flex flex-col justify-center items-center bg-white opacity-100 transition-opacity duration-[1200ms] hidden">
         <img src="./image/taigenteikokukan_logo.png"
-            class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute" />
+            class="w-[538px] max-w-4/5 h-auto left-1/2 top-2/5 -translate-x-1/2 -translate-y-1/2 absolute" />
     </div>
 
     <video id="bgVideo" autoplay muted loop playsinline webkit-playsinline preload="metadata"
@@ -177,12 +182,20 @@
                     class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
                     loading="lazy" />
             </picture>
+            <picture>
+                <source srcset="image/top4.webp" type="image/webp"
+                    class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+                    loading="lazy">
+                <img src="image/top4.png"
+                    class="absolute object-bottom w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+                    loading="lazy" />
+            </picture>
         </div>
         <div id="introWhiteOverlay"
             class="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-[1200ms]"
             style="background: linear-gradient(to bottom, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0) 100%);">
         </div>
-        <img class="w-[538px] max-w-4/5 h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute"
+        <img class="w-[538px] max-w-4/5 h-auto left-1/2 top-2/5 -translate-x-1/2 -translate-y-1/2 absolute"
             src="./image/taigenteikokukan_logo.png" alt="体現帝国館" />
         <img src="./image/intro2.svg" alt="舞台芸術を、内田橋から世界へ。24時間使える劇団［体現帝国］の専用劇場。地域と共に歩み、社会に必要とされる芸術を創造していきます。"
             id="introText"
